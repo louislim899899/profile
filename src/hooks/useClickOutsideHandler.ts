@@ -1,5 +1,3 @@
-import { AppDispatch } from "@/services/store";
-import { menuActions } from "@/services/store/menuSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AnyAction } from "redux";

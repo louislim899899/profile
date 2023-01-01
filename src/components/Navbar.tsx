@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/services/store'
-import { layoutActions } from '@/services/store/layoutSlice'
 import { menuActions } from '@/services/store/menuSlice'
 import useClickOutsideHandler from '@/hooks/useClickOutsideHandler'
 
@@ -14,7 +13,6 @@ export default function Navbar() {
   const isMenuOpen = useSelector((state: RootState) => state.menu.isMenuOpen)
   const dispatch = useDispatch()
   const toggleLayout = () => {
-    dispatch(layoutActions.expandLayout())
     dispatch(menuActions.hideMenu())
   }
   const menuRef = useRef<HTMLDivElement>(null);

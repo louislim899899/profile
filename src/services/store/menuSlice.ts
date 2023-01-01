@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import toggleMenu from '../reducers/menu/toggleMenu'
-import hideMenu from '../reducers/menu/hideMenu'
+import toggleMenu, {hideMenu} from "@/services/reducers/menu/menuReducer"
 
 const menuSlice = createSlice({
     name: 'menu',

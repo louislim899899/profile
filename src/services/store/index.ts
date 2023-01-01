@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit'
-import layoutSlice from './layoutSlice'
+import layoutSlice from './screenSlice'
 import menuSlice from './menuSlice'
 // import { combineReducers } from '@reduxjs/toolkit'
 
