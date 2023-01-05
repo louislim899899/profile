@@ -4,17 +4,17 @@ import ProfileSkill from "@/components/profile/ProfileSkill";
 import React, {Component} from "react";
 // import img from "src/assets/images/logo192.png"
 
-export default class ProfileScreen extends Component {
+export default class HomeScreen extends Component {
 
 
     render() {
         return (
-            <div className="h-screen">
-                <div className="absolute top-1/2 -translate-y-1/2 left-36">
+            // <div className="h-screen">
+            //     <div className="absolute top-1/2 -translate-y-1/2 left-36">
                         <ProfileIntro/>
-                </div>
+                // </div>
                 
-                <div className="absolute top-0 right-56">
+                /* <div className="absolute top-0 right-56">
                     <div className="relative z-10 h-screen">
                         <ProfileImage/>
                     </div>
@@ -23,9 +23,9 @@ export default class ProfileScreen extends Component {
 
                 <div className="py-8 absolute top-16 right-16 w-36">
                         <ProfileSkill/>
-                </div>
+                </div> */
                 
-            </div>
+            // </div>
         )
     }
 

@@ -1,6 +1,7 @@
 import {configureStore} from '@reduxjs/toolkit'
-import layoutSlice from './screenSlice'
+import screenSlice from './screenSlice'
 import menuSlice from './menuSlice'
+import transitionSlice from './transitionSlice'
 // import { combineReducers } from '@reduxjs/toolkit'
 
 
@@ -12,7 +13,8 @@ import menuSlice from './menuSlice'
 const store = configureStore({
     reducer: {
         menu: menuSlice.reducer,
-        layout: layoutSlice.reducer
+        screen: screenSlice.reducer,
+        transition: transitionSlice.reducer,
     },
 })
 export default store
