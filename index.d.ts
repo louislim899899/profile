@@ -5,3 +5,5 @@ declare module '*.jpg' {
 declare module '*.svg';
 
 export {}
+
+declare module '*.scss';

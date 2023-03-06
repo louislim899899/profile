@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 // import './App.css';
-import Header from '@/screens/layouts/Header';
+import './assets/styles/main.module.scss'
+import Header from './screens/layouts/Header';
 import Body from './screens/layouts/Body';
 
 function App() {

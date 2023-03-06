@@ -36,5 +36,6 @@
   //   "src",
   //   "src/*"
   // ],
-  "extends": "./tsconfig.paths"
+  "extends": "./tsconfig.paths",
+  "include": ["./index.d.ts"]
 }

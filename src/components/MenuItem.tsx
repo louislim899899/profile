@@ -8,6 +8,10 @@ export const MenuItem = [
         url: "/about"
     },
     {
+        title: "Experience",
+        url: "/experience"
+    },
+    {
         title: "Project",
         url: '/project'
     },

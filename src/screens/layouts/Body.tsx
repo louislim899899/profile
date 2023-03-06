@@ -1,7 +1,7 @@
 import ProfileImage from '@/components/profile/ProfileImage'
 import ProfileSkill from '@/components/profile/ProfileSkill'
 import { RootState } from '@/services/store'
-import React, { useEffect } from 'react'
+import React, { lazy, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import HomeScreen from '../HomeScreen'
@@ -12,7 +12,12 @@ import { transitionActions } from '@/services/store/transitionSlice'
 import { screenActions } from '@/services/store/screenSlice'
 import { current } from '@reduxjs/toolkit'
 import AboutScreen from '../AboutScreen'
+import ExperienceScreen from '../ExperienceScreen'
 import ContactScreen from '../ContactScreen'
+import Github from '@/components/profile/Github'
+
+// const HomeScreen = lazy(() => import('../HomeScreen'));
+// const AboutScreen = lazy(() => import('../AboutScreen'));
 
 export default function Body() {
     const location = useLocation()
@@ -48,6 +53,7 @@ export default function Body() {
                 <Route path="/" element={<HomeScreen/>}/>
                 <Route path="/about" element={<AboutScreen/>}/>
                 <Route path="/project" element={<ProjectScreen/>}/>
+                <Route path="/experience" element={<ExperienceScreen/>}/>
                 <Route path="/contact" element={<ContactScreen/>}/>
             </Routes>
             </div>
@@ -63,6 +69,10 @@ export default function Body() {
 
         <div className={"py-8 absolute top-16 right-16 w-36 transition-all ease-in-out duration-300" + (isHomeScreen ? " opacity-100 delay-300" : " opacity-0") }>
             <ProfileSkill/>
+        </div>
+
+        <div className={"py-8 absolute top-16 right-16 w-36 transition-all ease-in-out duration-300" + (isHomeScreen ? " opacity-100 delay-300" : " opacity-0") }>
+            <Github/>
         </div>
 
     </div>
