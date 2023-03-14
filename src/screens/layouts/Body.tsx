@@ -27,6 +27,8 @@ export default function Body() {
     const currentUrl = useSelector((state: RootState) => state.screen.currentUrl)
     const transition = useSelector((state: RootState) => state.transition.transition)
 
+    // console.log(isHomeScreen);
+
     useEffect(() => {
         if (location.pathname !== currentUrl) {
             dispatch(transitionActions.changeTransition("FADE_OUT"))
@@ -35,7 +37,7 @@ export default function Body() {
 
     const compareUrl = () => {
         // dispatch(screenActions.currentUrl())
-        console.log(location.pathname)
+        // console.log(location.pathname)
         
         if (transition === "fade-out") {
             dispatch(transitionActions.changeTransition("FADE_IN"))
@@ -48,14 +50,16 @@ export default function Body() {
     <div>
 
         <div className="h-screen">
-            <div className={"absolute max-w-2xl pt-52 left-36 h-screen overflow-y-scroll " + transition} onAnimationEnd={()=> {compareUrl()}}>
-            <Routes location={currentUrl} >
-                <Route path="/" element={<HomeScreen/>}/>
-                <Route path="/about" element={<AboutScreen/>}/>
-                <Route path="/project" element={<ProjectScreen/>}/>
-                <Route path="/experience" element={<ExperienceScreen/>}/>
-                <Route path="/contact" element={<ContactScreen/>}/>
-            </Routes>
+            <div className={"absolute pt-52 left-36 h-screen overflow-y-scroll max-w-full " + transition} onAnimationEnd={()=> {compareUrl()}}>
+                <div className=" max-w-xl">
+                <Routes location={currentUrl} >
+                    <Route path="/" element={<HomeScreen/>}/>
+                    <Route path="/about" element={<AboutScreen/>}/>
+                    <Route path="/project" element={<ProjectScreen/>}/>
+                    <Route path="/experience" element={<ExperienceScreen/>}/>
+                    <Route path="/contact" element={<ContactScreen/>}/>
+                </Routes>
+                </div>
             </div>
         </div>
         
@@ -71,7 +75,7 @@ export default function Body() {
             <ProfileSkill/>
         </div>
 
-        <div className={"py-8 absolute top-16 right-16 w-36 transition-all ease-in-out duration-300" + (isHomeScreen ? " opacity-100 delay-300" : " opacity-0") }>
+        <div className={"py-8 absolute bottom-16 right-16 w-36 transition-all ease-in-out duration-300" + (isHomeScreen ? " opacity-100 delay-300" : " opacity-0") }>
             <Github/>
         </div>
 

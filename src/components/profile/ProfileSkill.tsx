@@ -1,5 +1,5 @@
 import React from 'react'
-import {VueLogo, ReactLogo, TailwindLogo, PhpLogo, SqlLogo, PythonLogo} from '../logo/Logo'
+import {VueLogo, ReactLogo, TailwindLogo, PhpLogo, SqlLogo, PythonLogo, SassLogo} from '../logo/Logo'
 
 export default function ProfileSkill () {
   return (
@@ -10,6 +10,7 @@ export default function ProfileSkill () {
             <VueLogo />
             <ReactLogo />
             <TailwindLogo />
+            <SassLogo />
         </div>
         <p className='-mb-4'>Backend</p>
             <PhpLogo />
