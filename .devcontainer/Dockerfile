@@ -6,12 +6,12 @@ FROM node:14.17.4
 RUN npm install -g npm@6.14.14
 # the npm version is set depending on the node version
 
-################################################################################
-# Install prerequisites
-# make sure the information of package is updated
+# ################################################################################
+# # Install prerequisites
+# # make sure the information of package is updated
 RUN apt-get update
 
-# find out which distro we are running inside the container
+# # find out which distro we are running inside the container
 RUN apt-get install -y \
     lsb-release \
     curl
