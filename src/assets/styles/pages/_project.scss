@@ -1,0 +1,25 @@
+.project {
+
+    &__header {
+
+        @include media('>tablet') {
+            @include flexContainer($align: center);
+            margin-bottom: 1rem;
+    
+            &__image {
+                max-width: 24rem;
+            }
+
+            &__subtitle {
+                padding-left: 1rem;
+            }
+        }
+
+        &__image {
+            margin-bottom: 1rem;
+        }
+        
+
+        
+    }
+}

@@ -1,4 +1,4 @@
-type MapType = Map<string, string>
+// type MapType = Map<string, string>
 
 
 // const experienceMap4 = new Map<string, string>([
@@ -43,7 +43,7 @@ const experienceMap = new Map<string, Map<string, any>> ([
     [
         "intender",
         new Map<string, any>([
-            ["year", "2018-current"],
+            ["year", "2019-current"],
             ["company", "Intender Sdn Bhd"],
             ["position", "Full stack developer (major in Front-end)"],
             ["description", 

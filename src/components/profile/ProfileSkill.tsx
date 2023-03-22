@@ -4,7 +4,7 @@ import {VueLogo, ReactLogo, TailwindLogo, PhpLogo, SqlLogo, PythonLogo, SassLogo
 export default function ProfileSkill () {
   return (
     <div>
-        <h2>Skills.</h2>
+        <h3>Skills.</h3>
         <p>Frontend</p>
         <div className='mb-6 mt-1'>
             <VueLogo />

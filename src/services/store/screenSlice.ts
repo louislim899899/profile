@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { isHomeScreen, notHomeScreen, setCurrentUrl } from "@/services/reducers/screen/screenReducer"
+import { initialState, isHomeScreen, notHomeScreen, setCurrentUrl, getDevice } from "@/services/reducers/screen/screenReducer"
 
 const screenSlice = createSlice({
     name: 'screen',
-    initialState: { isHomeScreen: true, currentUrl: "/" }, // can add multiple initial state variable
+    initialState: initialState, // can add multiple initial state variable
     reducers: { // can add multiple function
         isHomeScreen,
         notHomeScreen,
-        setCurrentUrl
+        setCurrentUrl,
+        getDevice,
     }
 })
 

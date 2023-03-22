@@ -1,7 +1,4 @@
 @use './components/block';
 @import './abstracts/_variables';
 
-
-h5 {
-    color: $color-main;
-}
+@import './layout/_containers';

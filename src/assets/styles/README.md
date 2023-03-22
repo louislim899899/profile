@@ -11,6 +11,11 @@ https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4
 Hold sass tools, helpers files, variables, functions, mixins & config files
 Helper only, which don't output any CSS when compiled.
 
+### Base
+
+Hold boilerplate for projects including standard styles such as typography which commonly
+used throughout the project
+
 ### Components
 
 Styles for button, carousels, sliders, widgets. Most compact folders
