@@ -14,6 +14,8 @@ import AboutScreen from '../AboutScreen'
 import ExperienceScreen from '../ExperienceScreen'
 import ContactScreen from '../ContactScreen'
 import Github from '@/components/profile/Github'
+import profileCss from '@/assets/styles/pages/_profile.module.scss'
+
 
 // const HomeScreen = lazy(() => import('../HomeScreen'));
 // const AboutScreen = lazy(() => import('../AboutScreen'));
