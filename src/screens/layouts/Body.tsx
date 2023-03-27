@@ -65,9 +65,9 @@ export default function Body() {
     }
 
   return (
-    <div className="profile">
-        <div className='profile__container'>
-            <div className={"profile__content " + transition} onAnimationEnd={()=> {compareUrl()}}>
+    <div className={profileCss.profile}>
+        <div className={profileCss.profile__container}>
+            <div className={profileCss.profile__content + " " + transition} onAnimationEnd={()=> {compareUrl()}}>
                 <Routes location={currentUrl} >
                     <Route path="/" element={<HomeScreen/>}/>
                     <Route path="/about" element={<AboutScreen/>}/>

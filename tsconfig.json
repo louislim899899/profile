@@ -19,6 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "rootDir": "./",
     // "baseUrl": "./src",
     // "paths": {
     //   "@/images/*": ["./assets/images/*"],

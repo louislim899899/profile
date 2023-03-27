@@ -6,6 +6,8 @@ FROM node:14.17.4
 RUN npm install -g npm@6.14.14
 # the npm version is set depending on the node version
 
+RUN npm install -g serve
+
 # ################################################################################
 # # Install prerequisites
 # # make sure the information of package is updated

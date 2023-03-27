@@ -15,10 +15,16 @@ module.exports = {
   },
 
   jest: {
+    babel: {
+      addPresets: true /* (default value) */,
+      addPlugins: true /* (default value) */,
+    },
     configure: {
+      verbose: true,
       moduleNameMapper: {
-        '^@components(.*)$': '<rootDir>/src/components$1',
-        '^@(.+)': '<rootDir>/$1',
+        // '^@components(.*)$': '<rootDir>/src/components$1',
+        // '^@(.+)': '<rootDir>/$1',
+        '@': '<rootDir>/$1',
       },
     },
   },
