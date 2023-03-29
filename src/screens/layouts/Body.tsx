@@ -20,6 +20,8 @@ import profileCss from '@/assets/styles/pages/_profile.module.scss'
 // const HomeScreen = lazy(() => import('../HomeScreen'));
 // const AboutScreen = lazy(() => import('../AboutScreen'));
 
+const title = "rect";
+
 export default function Body() {
     const location = useLocation()
     const dispatch = useDispatch()

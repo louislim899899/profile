@@ -1,5 +1,5 @@
 # image type: node
-FROM node:14.17.4 
+FROM node:18
 # in case you are using lambda or AWS, only selected node version is supported
 
 # node may come with an older version of npm. Ensure we have a specific npm.
