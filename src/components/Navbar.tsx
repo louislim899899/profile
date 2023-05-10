@@ -37,14 +37,14 @@ export default function Navbar() {
   return (
     // <div className='w-8 bg-black h-full w-full absolute top-0 p-4 left-0 ${isMenuOpen ? }'>
     // <nav ref={menuRef as React.RefObject<HTMLDivElement>} className={"nav " + (isMenuOpen ? 'left-0' : '-left-56')}>
-    <nav ref={menuRef as React.RefObject<HTMLDivElement>} className={"nav " + (isMenuOpen ? 'nav--show' : 'nav--hide')}>
+    <nav ref={menuRef as React.RefObject<HTMLDivElement>} className={"nav " + (isMenuOpen ? 'nav--show' : 'nav--hide')} data-testid="navId">
       <h2 className='font-bold leading-tight text-3xl pt-8 mb-5 row-span-1'>Ls.</h2>
       <div className='row-span-4'>
         {/* <button className="block py-2 text-xl" onClick={toggleLayout}>Home</button>
         <button className="block py-2 text-xl" onClick={toggleLayout}>Projects</button>
         <button className="block py-2 text-xl" onClick={toggleLayout}>Contact</button> */}
-        {MenuItem.map((item,index) => (
-          <Link to={item.url} key={index} className="nav__link" onClick={changeScreen}>{item.title}</Link>
+        {MenuItem.map((item) => (
+          <Link key={item.title} to={item.url} className="nav__link" data-testid={item.title} onClick={changeScreen}>{item.title}</Link>
         ))}
       </div>
       <div className='copyright'>

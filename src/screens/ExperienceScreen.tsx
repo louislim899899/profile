@@ -14,8 +14,8 @@ export default function ExperienceScreen() {
             <h5 className="font-color--main">{value.get('position')}</h5>
             <p>{
             Array.isArray(value.get('description')) ? 
-            value.get('description').map((value,index) => 
-              (<li key={index}>{value}</li>)
+            value.get('description').map((value) => 
+              (<li>{value}</li>)
             ) :
               <li>{value.get('description')}</li>
             }</p>

@@ -7,7 +7,7 @@
 	],
 	// The name of the following service has to match one of the services in docker-compose.yml
 	"service": "devcontainer",  // container name, must be same with docker-compose.yml
-	"workspaceFolder": "/src",  // container start with workspace /src
+	"workspaceFolder": "/profile",  // container start with workspace /src
 	"extensions": [ // extension to use when dev container run
 		"firsttris.vscode-jest-runner",
 		"esbenp.prettier-vscode",

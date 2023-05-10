@@ -29,6 +29,8 @@ export default function Body() {
     const transition = useSelector((state: RootState) => state.transition.transition)
     const device = useSelector((state: RootState) => state.screen.device)
 
+    const isMounted = React.useRef(false);
+
     // console.log(isHomeScreen);
 
     useEffect(() => {
@@ -40,10 +42,15 @@ export default function Body() {
     }, [location, currentUrl])
 
     useEffect(() => {
+        if (!isMounted.current) {
+            isMounted.current = true;
+      } else {
+        console.log('A');
         // setTimeout(() => {
         //     getDevice();
         // }, 5000)
         getDevice(); 
+      }
     }, [device])  // run only first time;
 
     const checkHomeScreen = () => {
@@ -77,6 +84,8 @@ export default function Body() {
                 </Routes>
             </div>
         </div>
+
+        <p>{currentUrl}</p>
         
 
         {/* <div className={"profile__image" + (isHomeScreen ? " right-56" : " right-0 delay-300") }> */}

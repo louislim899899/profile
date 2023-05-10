@@ -70,7 +70,7 @@ export default function ProjectScreen() {
 
       
       <div className='mt-3'>
-        {projects.map((project, index) => (
+        {projects.map((project) => (
 
         <div className='block'>
           <div className='project__header'>
@@ -84,13 +84,13 @@ export default function ProjectScreen() {
           <p>{project.desc}</p>
 
           <ul className='list-disc pl-5'>
-          {project.features.map((feature, index) => (
+          {project.features.map((feature) => (
             <li>{feature}</li>
           ))}
           </ul>
 
           <h4 className='mt-5'>Stack</h4>
-          {project.stack.map((logo,index) => (
+          {project.stack.map((logo) => (
             logo
           ))}
 

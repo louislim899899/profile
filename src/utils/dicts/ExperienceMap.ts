@@ -20,7 +20,10 @@ const experienceMap = new Map<string, Map<string, any>> ([
             ["year", "2015-2017"],
             ["company", "Intel"],
             ["position", "Structural Design Engineer"],
-            ["description", "Learned Unix scripts. Useful in operating cli environment such as hosting, server, terminal etc."]
+            ["description", 
+                [
+                    "Learned Unix scripts. Useful in operating cli environment such as hosting, server, terminal etc."
+                ]
         ]),
     ],
     [
@@ -31,10 +34,10 @@ const experienceMap = new Map<string, Map<string, any>> ([
             ["position", "Front-end developer / Wordpress developer"],
             ["description", 
                 [
-                    "Worked in high pace environment to complete a wordpress project within 3-4 days in average, without using theme but based on designer's design",
+                    "Worked in fast-paced environment to complete a wordpress project within 3-4 days in average, without using ready-made theme but based on designer's design",
                     "Customized plugin using PHP & javascript",
-                    "Build mainly using css & vanilla javascript, also learned sass",
-                    "Hosting migration, DNS, domain pointing, and other server maintenance works",
+                    "Built mainly using css & vanilla javascript, also learned sass",
+                    "Hosting migration, DNS, domain pointing, and other server maintenance works, mainly using Cpanel & Plesk",
                     "Learned Photoshop, Illustrator, Premiere Pro",
                 ]
             ]

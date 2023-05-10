@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className='header'>
-      <button onClick={toggleMenu} className="header__button">
+      <button onClick={toggleMenu} className="header__button" data-testid="navBtn">
         <h2 className='header__button__title'>Ls.</h2>
         </button>
       <Navbar/>

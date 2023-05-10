@@ -9,9 +9,9 @@ services:
     build: .  # built context for docker compose, path is relative to docker-compose.yml location. Docker will look into this location for a file named DockerFile & use that file to build image
     container_name: orderservice-dev-container  # give container a readable name
     hostname: orderservice-dev.local  # give container a hostname, used for virtual connection between containers
-    working_dir: /   # define working directory once the container started
+    working_dir: /profile   # define working directory once the container started
     volumes:  # mount volume
-       - ..:/  # refer to root or up a level before /src
+       - ..:/profile  # refer to root or up a level before /src
        # Allow AWS CLI and other tools to read an AWS profile
        - ~/.aws:/home/node/.aws   # show you how you can make other file or directory available within your container
     command: sleep infinity # instruct docker which command to start when container is running. sleep infinity - container start and terminate immediately

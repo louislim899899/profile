@@ -21,11 +21,12 @@ module.exports = {
     },
     configure: {
       verbose: true,
-      moduleNameMapper: {
-        // '^@components(.*)$': '<rootDir>/src/components$1',
-        // '^@(.+)': '<rootDir>/$1',
-        '@': '<rootDir>/$1',
-      },
+      // moduleNameMapper: {
+      //   // '^@components(.*)$': '<rootDir>/src/components$1',
+      //   // '^@(.+)': '<rootDir>/$1',
+      //   '^@(.+)': '/$1',
+      //   // '@': '<rootDir>/$1',
+      // },
     },
   },
 
