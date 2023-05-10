@@ -49,3 +49,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 >>>>>>> master
+
+## File Structure References
+https://www.xenonstack.com/insights/reactjs-project-structure
+https://github.com/alan2207/bulletproof-react/tree/master/src

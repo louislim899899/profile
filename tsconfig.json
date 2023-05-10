@@ -18,9 +18,25 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "rootDir": "./",
+    // "baseUrl": "./src",
+    // "paths": {
+    //   "@/images/*": ["./assets/images/*"],
+    //   "@/components/*": ["./components/*"],
+    //   "node_modules/*": ["../node_modules/*"]      
+    // }
   },
-  "include": [
-    "src"
-  ]
+  // "include": [
+  //   "src"
+  // ],
+  // "exclude": [
+  //     "node_modules"
+  // ]
+  // "include": [
+  //   "src",
+  //   "src/*"
+  // ],
+  "extends": "./tsconfig.paths",
+  "include": ["./index.d.ts"]
 }

@@ -1,14 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Menu from './ts/layouts/Menu';
+// import logo from './logo.svg';
+// import './App.css';
+import './assets/styles/main.scss';
+import './assets/styles/main.module.scss'
+import Header from './screens/layouts/Header';
+import Body from './screens/layouts/Body';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header font-bold underline">
-        <Menu/>
-      </header>
+    <div className="app">
+      <div className='container'>
+        <header className="App-header">
+          <Header />
+        </header>
+        <main>
+          <Body />
+        </main>
+      </div>
     </div>
   );
 }
