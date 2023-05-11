@@ -22,8 +22,9 @@ const experienceMap = new Map<string, Map<string, any>> ([
             ["position", "Structural Design Engineer"],
             ["description", 
                 [
-                    "Learned Unix scripts. Useful in operating cli environment such as hosting, server, terminal etc."
+                    "Learned Unix scripts. Useful in operating cli environment such as hosting, server, terminal etc.",
                 ]
+            ]
         ]),
     ],
     [

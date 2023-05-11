@@ -11,9 +11,11 @@ RUN npm install -g serve
 # ################################################################################
 # # Install prerequisites
 # # make sure the information of package is updated
-RUN apt-get update
+# RUN apt-get clean
 
-# # find out which distro we are running inside the container
-RUN apt-get install -y \
-    lsb-release \
-    curl
+# RUN apt-get update
+
+# # # find out which distro we are running inside the container
+# RUN apt-get install -y \
+#     # lsb-release \
+#     curl

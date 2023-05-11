@@ -5,10 +5,10 @@ version: '3.7' # syntax version
 
 services:
   devcontainer: # match with devcontainer.json's service name
-    image: acme/orderservice-dev-container:0.1  # give image a tag after built
+    image: louislim899899/react-profile-dev-container:0.1  # give image a tag after built
     build: .  # built context for docker compose, path is relative to docker-compose.yml location. Docker will look into this location for a file named DockerFile & use that file to build image
-    container_name: orderservice-dev-container  # give container a readable name
-    hostname: orderservice-dev.local  # give container a hostname, used for virtual connection between containers
+    container_name: react-profile-dev-container  # give container a readable name
+    hostname: react-profile-dev.local  # give container a hostname, used for virtual connection between containers
     working_dir: /profile   # define working directory once the container started
     volumes:  # mount volume
        - ..:/profile  # refer to root or up a level before /src

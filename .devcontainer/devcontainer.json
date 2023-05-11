@@ -19,4 +19,5 @@
 	],
 	"shutdownAction": "stopCompose",    // run when we close folder or VS code: stop the container
 	"remoteUser": "node", //Zero trust & Principle of Least Privileage, do not install sudo or run as root to prevent running your code
+	"postCreateCommand": "apt-get update && apt-get install -y docker.io",
 }
