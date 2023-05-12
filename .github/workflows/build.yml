@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: user/app:latest
+          tags: louislim899899/react-profile-dev-container:0.1
 
       - name: Build and run Dev Container
         run: |
