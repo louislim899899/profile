@@ -33,29 +33,7 @@ export default function Body() {
 
     // console.log(isHomeScreen);
 
-    useEffect(() => {
-        if (location.pathname !== currentUrl) {
-            dispatch(transitionActions.changeTransition("FADE_OUT"))
-        } 
-        checkHomeScreen(); 
-
-    }, [location, currentUrl])
-
-    useEffect(() => {
-        if (!isMounted.current) {
-            isMounted.current = true;
-      } else {
-        console.log('A');
-        // setTimeout(() => {
-        //     getDevice();
-        // }, 5000)
-        getDevice(); 
-      }
-    }, [device])  // run only first time;
-
-    const checkHomeScreen = () => {
-        currentUrl === "/" ? dispatch(screenActions.isHomeScreen()) : dispatch(screenActions.notHomeScreen());
-    }
+ 
 
     const getDevice = () => {
         dispatch(screenActions.getDevice());
@@ -70,6 +48,33 @@ export default function Body() {
             dispatch(screenActions.setCurrentUrl(location.pathname))
         } 
     }
+
+    useEffect(() => {
+        if (location.pathname !== currentUrl) {
+            dispatch(transitionActions.changeTransition("FADE_OUT"))
+        } 
+
+        const checkHomeScreen = () => {
+            currentUrl === "/" ? dispatch(screenActions.isHomeScreen()) : dispatch(screenActions.notHomeScreen());
+        }
+        
+        checkHomeScreen(); 
+
+    }, [location, currentUrl, dispatch])
+
+    useEffect(() => {
+        if (!isMounted.current) {
+            isMounted.current = true;
+      } else {
+        console.log('A');
+        // setTimeout(() => {
+        //     getDevice();
+        // }, 5000)
+        getDevice(); 
+      }
+    }, [device])  // run only first time;
+
+  
 
   return (
     <div className={profileCss.profile}>
