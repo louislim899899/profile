@@ -77,7 +77,7 @@ jobs:
 
       ############## Github upload artifact to github page ####################
       - name: Upload Github Page artifact
-        use: actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact
         with: 
           path: './build'
           retension-days: 1
