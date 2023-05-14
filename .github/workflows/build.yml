@@ -48,10 +48,10 @@ jobs:
       #     docker build -t louislim899899/react-profile-dev-container:0.1 .
       #     docker run -d --name react-profile-dev-container_instance react-profile-dev-container
 
-      - name: "Sharing actions with devcontainers"
-        runs:
-          using: "docker"
-          image: "../docker/Dockerfile"
+      # - name: "Sharing actions with devcontainers"
+      #   runs:
+      #     using: "docker"
+      #     image: "../docker/Dockerfile"
       
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
