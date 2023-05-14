@@ -23,20 +23,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      -
-        name: Set up QEMU
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-      -
-        name: Set up Docker Buildx
+
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      -
-        name: Login to Docker Hub
+
+      - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and push
+
+      - name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -44,10 +43,15 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/react-profile-dev-container:0.1
 
-      - name: Build and run Dev Container
-        run: |
-          docker build -t louislim899899/react-profile-dev-container:0.1 .
-          docker run -d --name react-profile-dev-container_instance react-profile-dev-container
+      # - name: Build and run Dev Container
+      #   run: |
+      #     docker build -t louislim899899/react-profile-dev-container:0.1 .
+      #     docker run -d --name react-profile-dev-container_instance react-profile-dev-container
+
+      - name: "Sharing actions with devcontainers"
+        runs:
+          using: "docker"
+          image: "../docker/Dockerfile"
       
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -56,4 +60,97 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm test
+      - run: npm test -- --coverage
+
+
+      # - name: Deploy using branch as Github Page
+      #   run: |
+      #     git config --global user.name $user_name
+      #     git config --global user.email $user_email
+      #     git remote set-url origin https://${github_token}@github.com/${repository}
+      #     npm run deploy
+      #   env:
+      #     user_name: 'github-actions[bot]'
+      #     user_email: 'github-actions[bot]@users.noreply.github.com'
+      #     github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+      #     repository: ${{ github.repository }}
+
+############## Github upload artifact to github page ####################
+
+name: "Upload GitHub Pages artifact"
+description: "A composite action that prepares your static assets to be deployed to GitHub Pages"
+author: "GitHub"
+inputs:
+  name:
+    description: 'Artifact name'
+    required: false
+    default: 'github-pages'
+  path:
+    description: "Path of the directory containing the static assets."
+    required: true
+    default: "./build"
+  retention-days:
+    description: "Duration after which artifact will expire in days."
+    required: false
+    default: "1"
+runs:
+  using: composite
+  steps:
+    - name: React Profile artifact
+      shell: sh
+      if: runner.os == 'Linux'
+      run: |
+        chmod -c -R +rX "$INPUT_PATH" | while read line; do
+          echo "::warning title=Invalid file permissions automatically fixed::$line"
+        done
+        tar \
+          --dereference --hard-dereference \
+          --directory "$INPUT_PATH" \
+          -cvf "$RUNNER_TEMP/artifact.tar" \
+          --exclude=.git \
+          --exclude=.github \
+          .
+      env:
+        INPUT_PATH: ${{ inputs.path }}
+
+    # Switch to gtar (GNU tar instead of bsdtar which is the default in the MacOS runners so we can use --hard-dereference)
+    - name: Archive artifact
+      shell: sh
+      if: runner.os == 'macOS'
+      run: |
+        chmod -v -R +rX "$INPUT_PATH" | while read line; do
+          echo "::warning title=Invalid file permissions automatically fixed::$line"
+        done
+        gtar \
+          --dereference --hard-dereference \
+          --directory "$INPUT_PATH" \
+          -cvf "$RUNNER_TEMP/artifact.tar" \
+          --exclude=.git \
+          --exclude=.github \
+          .
+      env:
+        INPUT_PATH: ${{ inputs.path }}
+
+    # Massage the paths for Windows only
+    - name: Archive artifact
+      shell: bash
+      if: runner.os == 'Windows'
+      run: |
+        tar \
+          --dereference --hard-dereference \
+          --directory "$INPUT_PATH" \
+          -cvf "$RUNNER_TEMP\artifact.tar" \
+          --exclude=.git \
+          --exclude=.github \
+          --force-local \
+          "."
+      env:
+        INPUT_PATH: ${{ inputs.path }}
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ inputs.name }}
+        path: ${{ runner.temp }}/artifact.tar
+        retention-days: ${{ inputs.retention-days }}
+        if-no-files-found: error
