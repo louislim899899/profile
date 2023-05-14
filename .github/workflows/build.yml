@@ -76,9 +76,9 @@ jobs:
       #     repository: ${{ github.repository }}
 
       ############## Github upload artifact to github page ####################
-      - name: Upload Github Page artifact
-        uses: actions/upload-pages-artifact
-        with: 
-          path: './build'
-          retension-days: 1
+      # - name: Upload Github Page artifact
+      #   uses: actions/upload-pages-artifact
+      #   with: 
+      #     path: './build'
+      #     retension-days: 1
       
