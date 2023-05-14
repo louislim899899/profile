@@ -33,12 +33,6 @@ export default function Body() {
 
     // console.log(isHomeScreen);
 
- 
-
-    const getDevice = () => {
-        dispatch(screenActions.getDevice());
-    }
-
     const compareUrl = () => {
         // dispatch(screenActions.currentUrl())
         // console.log(location.pathname)
@@ -70,9 +64,14 @@ export default function Body() {
         // setTimeout(() => {
         //     getDevice();
         // }, 5000)
+
+        const getDevice = () => {
+            dispatch(screenActions.getDevice());
+        }
+
         getDevice(); 
       }
-    }, [device])  // run only first time;
+    }, [device, dispatch])  // run only first time;
 
   
 
