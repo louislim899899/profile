@@ -9,6 +9,21 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# Allows you to run this workflow manually from the Actions tab
+workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
 
@@ -52,6 +67,31 @@ jobs:
       #   runs:
       #     using: "docker"
       #     image: "../docker/Dockerfile"
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: >-
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{
+            hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
       
       # - name: Use Node.js ${{ matrix.node-version }}
       #   uses: actions/setup-node@v3
@@ -62,8 +102,14 @@ jobs:
       # - run: npm run build --if-present
       # - run: npm test -- --coverage
 
-      - name: Upload Github Page artifact
-        uses: actions/upload-artifact@v2
-        with: 
-          path: './build'
-          retension-days: 1
+      # - name: Upload Github Page artifact
+      #   uses: actions/upload-artifact@v2
+      #   with: 
+      #     path: './build'
+      #     retention-days: 1
+
+      # https://github.com/marketplace/actions/deploy-to-github-pages
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     folder: ./src # The folder the action should deploy.
