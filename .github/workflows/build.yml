@@ -95,11 +95,12 @@ jobs:
 
       - name: Deploy with gh-pages
         run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
+                # git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+
       # - name: Use Node.js ${{ matrix.node-version }}
       #   uses: actions/setup-node@v3
       #   with:
