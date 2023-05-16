@@ -88,11 +88,7 @@ jobs:
       #   uses: actions/upload-pages-artifact@v1
       #   with:
       #     # Upload entire repository
-<<<<<<< HEAD
-      #     path: '.'
-=======
       #     path: './build'
->>>>>>> main
       # - name: Deploy to GitHub Pages
       #   id: deployment
       #   uses: actions/deploy-pages@v2
@@ -103,11 +99,6 @@ jobs:
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-<<<<<<< HEAD
-
-          # https://louislim899899.github.io/profile"
-=======
->>>>>>> main
       
       # - name: Use Node.js ${{ matrix.node-version }}
       #   uses: actions/setup-node@v3
