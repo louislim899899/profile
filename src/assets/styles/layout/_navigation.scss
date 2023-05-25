@@ -3,7 +3,10 @@ $_nav-width: 10em;
 .nav {
     padding-left: 1rem;
     min-width: max-content;
-    background-color: $color-black;
+    background-color: $color-black-rgba;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(8, 8, 8, 0.25);
     top: 0;
     left: 0;
     width: $_nav-width;

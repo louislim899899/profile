@@ -87,10 +87,7 @@ export default function Body() {
                     <Route path="/contact" element={<ContactScreen/>}/>
                 </Routes>
             </div>
-        </div>
-
-        <p>{currentUrl}</p>
-        
+        </div>        
 
         {/* <div className={"profile__image" + (isHomeScreen ? " right-56" : " right-0 delay-300") }> */}
         <div className={"profile__image" + (isHomeScreen ? " is-home" : " not-home") }>
