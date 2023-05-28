@@ -15,7 +15,7 @@
 const experienceMap = new Map<string, Map<string, any>> ([
 // const experienceMap3:WorkExperience[] = [
     [
-        "intel",
+        "2015",
         new Map<string, any>([
             ["year", "2015-2017"],
             ["company", "Intel"],
@@ -28,7 +28,7 @@ const experienceMap = new Map<string, Map<string, any>> ([
         ]),
     ],
     [
-        "inspiren",
+        "2018",
         new Map<string, any>([
             ["year", "2018-2019"],
             ["company", "Inspiren Sdn Bhd"],
@@ -45,7 +45,7 @@ const experienceMap = new Map<string, Map<string, any>> ([
         ]),
     ],
     [
-        "intender",
+        "2019",
         new Map<string, any>([
             ["year", "2019-current"],
             ["company", "Intender Sdn Bhd"],

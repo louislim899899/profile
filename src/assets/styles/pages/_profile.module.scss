@@ -14,8 +14,8 @@
     
     &__content {
         height: 100%;
-        max-width: 36em;
-        padding-top: 13em;
+        max-width: 40em;
+        // padding-top: 13em;
         @include absoluteContainer($left: 9rem);
 
         @include media("<=tablet") {

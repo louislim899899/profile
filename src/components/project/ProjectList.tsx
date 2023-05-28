@@ -1,7 +1,14 @@
 import React from 'react'
+import projectMap from '../../utils/dicts/ProjectMap'
 
 export default function ProjectList() {
   return (
-    <div>ProjectList</div>
+    Array.from(projectMap, (key, value) => {
+      return (
+        <div>
+            value
+          </div>
+      )
+    })
   )
 }
