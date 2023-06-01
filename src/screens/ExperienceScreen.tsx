@@ -13,14 +13,10 @@ export default function ExperienceScreen() {
     const sliders = Array.from(document.querySelectorAll('.wrapper'));
 
     sliders.forEach((slider) => {
-      const numberOfSlides = slider.querySelectorAll('.panel').length;
       
       slider.querySelector('.panel:nth-child(1)')?.classList.add('_active');
       slider.querySelector('.nav-dot:nth-child(1)')?.classList.add('active');
       
-      const activeSlide = slider.querySelector('.panel._active') as HTMLElement;
-      // const nextBtn = slider.querySelector('.next-btn');
-      // const prevBtn = slider.querySelector('.prev-btn');
       const navDots = Array.from(document.querySelectorAll('.nav-dot'));
       
       navDots.forEach((dot) => {

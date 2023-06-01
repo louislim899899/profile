@@ -10,8 +10,8 @@ export default function ContactScreen() {
         <p className="email text-4xl mt-5 mb-24">louislim899899@gmail(dot)com</p>
 
         <p className='mb-3'>Connect me via</p>
-        <a href='/' className='mr-3 hover:text-red' target="_blank"><LinkedinLogo /></a>
-        <a href='/' target="_blank"><GithubLogo /></a>
+        <a href='/' className='mr-3 hover:text-red' target="_blank" rel="noopener noreferrer"><LinkedinLogo /></a>
+        <a href='/' target="_blank" rel="noopener noreferrer"><GithubLogo /></a>
     </div>
   )
 }

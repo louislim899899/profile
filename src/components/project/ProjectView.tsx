@@ -37,7 +37,7 @@ export default function ProjectView() {
       </div>
 
       <div className='project__link'>
-        <a href={project.link} target='_blank'>Visit website</a>
+        <a href={project.link} target='_blank' rel="noopener noreferrer">Visit website</a>
       </div>
 
       <div className="project__image">
