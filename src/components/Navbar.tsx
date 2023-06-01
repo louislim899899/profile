@@ -25,7 +25,7 @@ export default function Navbar() {
   const changeScreen = (e:any) => {
     dispatch(menuActions.hideMenu())
 
-    e.target.getAttribute("href") === "/" ? 
+    e.target.getAttribute("href") === "/profile" ? 
     dispatch(screenActions.isHomeScreen()) : dispatch(screenActions.notHomeScreen())
 
     dispatch(transitionActions.changeTransition("FADE_OUT"))

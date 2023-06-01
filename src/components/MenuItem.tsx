@@ -1,7 +1,7 @@
 export const MenuItem = [
     {
         title: "Home",
-        url: "/"
+        url: "/profile"
     },
     {
         title: "About",
