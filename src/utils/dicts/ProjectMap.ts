@@ -76,54 +76,5 @@ const projectMap: Map<String, Project> = new Map ([
   ]
 ]) 
 
-const projects: Project[] = [
-  {
-    img: imgErp,
-    number: "01",
-    name: "Enterprise Resource Planning (ERP)",
-    desc: "An internal-use platform for a contractor company.",
-    features: [
-      "Invoice tracking",
-      "Item price tracking",
-      "Subcontractor management"
-    ],
-    // stack: [
-    //   VueLogo,
-    //   PhpLogo, 
-    //   SqlLogo
-    // ] 
-  },
-  {
-    img: imgIntender,
-    number: "02",
-    name: "Intender",
-    desc: "A construction information provider",
-    features: [
-      "Provide project, company, contact info",
-      "Admin dashboard",
-      "Automatic data processing"
-    ],
-    // stack: [
-    //   VueLogo,
-    //   PhpLogo,
-    //   SqlLogo,
-    //   PythonLogo
-    // ] 
-  },
-  {
-    img: imgEasyfood,
-    number: "03",
-    name: "Easyfood",
-    desc: "Raw chicken E-commerce",
-    features: [
-      "Invoice tracking",
-      "Item price tracking",
-      "Subcontractor management"
-    ],
-    // stack: [
-    //   WordpressLogo
-    // ] 
-  },
-]
     
     export default projectMap

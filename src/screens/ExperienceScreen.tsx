@@ -40,62 +40,8 @@ export default function ExperienceScreen() {
         navDots.forEach((dot) => {
           dot.classList.remove('active');
         });
-        
-        // const activeDot = document.querySelector(`.nav-dot[data-slide="${activeSlide.getAttribute('data-slide')}"]`);
-        // console.log(activeDot)
-        // activeDot?.classList.add('active');
-      });
-        
-      // nextBtn?.addEventListener('click', () => {
-      //   nextSlide();
-      // });
-      
-      // prevBtn?.addEventListener('click', () => {
-      //   prevSlide();
-      // });
 
-      function nextSlide() {
-        const nextSlide = activeSlide?.nextElementSibling as HTMLElement;
-        activeSlide?.classList.remove('_active');
-        nextSlide?.classList.add('_active');
-      
-        const slideIndex = Array.from(slider.querySelectorAll('.panel')).indexOf(activeSlide!);
-      
-        if (slideIndex >= numberOfSlides || slideIndex <= -1) {
-          firstSlide();
-          slider.dispatchEvent(new Event('slide.changed'));
-        } else {
-          slider.dispatchEvent(new Event('slide.changed'));
-        }
-      }
-      
-      function prevSlide() {
-        const prevSlide = activeSlide?.previousElementSibling as HTMLElement;
-        activeSlide?.classList.remove('_active');
-        prevSlide?.classList.add('_active');
-      
-        const slideIndex = Array.from(slider.querySelectorAll('.panel')).indexOf(activeSlide!);
-        console.log(slideIndex);
-      
-        if (!prevSlide || slideIndex <= -1) {
-          lastSlide();
-          slider.dispatchEvent(new Event('slide.changed'));
-        } else {
-          slider.dispatchEvent(new Event('slide.changed'));
-        }
-      }
-      
-      function firstSlide() {
-        const activeSlide = slider.querySelector('.panel._active');
-        activeSlide?.classList.remove('_active');
-        slider.querySelector('.panel:nth-child(1)')?.classList.add('_active');
-      }
-      
-      function lastSlide() {
-        const activeSlide = slider.querySelector('.panel._active');
-        activeSlide?.classList.remove('_active');
-        slider.querySelectorAll('.panel')[numberOfSlides - 1]?.classList.add('_active');
-      }
+      });
       
       function goToSlide(slideToGo: number) {
         const activeSlide = slider.querySelector('.panel._active');

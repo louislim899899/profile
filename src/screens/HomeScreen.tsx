@@ -1,5 +1,5 @@
 import ProfileIntro from "@/components/profile/ProfileIntro";
-import React, {Component, useEffect} from "react";
+import React, {useEffect} from "react";
 
 export default function HomeScreen() {
 
