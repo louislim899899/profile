@@ -15,6 +15,7 @@ import ExperienceScreen from '../ExperienceScreen'
 import ContactScreen from '../ContactScreen'
 import Github from '@/components/profile/Github'
 import profileCss from '@/assets/styles/pages/_profile.module.scss'
+import ProjectView from '../../components/project/ProjectView'
 
 
 // const HomeScreen = lazy(() => import('../HomeScreen'));
@@ -60,7 +61,6 @@ export default function Body() {
         if (!isMounted.current) {
             isMounted.current = true;
       } else {
-        console.log('A');
         // setTimeout(() => {
         //     getDevice();
         // }, 5000)
@@ -80,11 +80,13 @@ export default function Body() {
         <div className={profileCss.profile__container}>
             <div className={profileCss.profile__content + " " + transition} onAnimationEnd={()=> {compareUrl()}}>
                 <Routes location={currentUrl} >
-                    <Route path="/" element={<HomeScreen/>}/>
+                    <Route path="/profile" element={<HomeScreen/>}/>
                     <Route path="/about" element={<AboutScreen/>}/>
                     <Route path="/project" element={<ProjectScreen/>}/>
+                    <Route key="view" path="/project/view/:id" element={<ProjectView/>}/>
                     <Route path="/experience" element={<ExperienceScreen/>}/>
                     <Route path="/contact" element={<ContactScreen/>}/>
+                    <Route path="/happy:id" element={<ContactScreen/>}/>
                 </Routes>
             </div>
         </div>        

@@ -3,6 +3,7 @@ import imgErp from "@/assets/images/website/erp.png"
 import imgIntender from "@/assets/images/website/intender.png"
 import imgEasyfood from "@/assets/images/website/easyfood.png"
 import { PhpLogo, PythonLogo, SqlLogo, VueLogo, WordpressLogo } from '@/components/logo/Logo'
+import ProjectList from '../components/project/ProjectList'
 
 type Project = {
   img: string;
@@ -26,8 +27,8 @@ const projects: Project[] = [
     ],
     stack: [
       <VueLogo />,
-      <PhpLogo />,
-      <SqlLogo />
+      // <PhpLogo />,
+      // <SqlLogo />
     ] 
   },
   {
@@ -65,8 +66,9 @@ const projects: Project[] = [
 
 export default function ProjectScreen() {
   return (
-    <div className='project'>
-      <h2 className='project__title'>Projects.</h2>
+    <div className='project content-padding-top'>
+      <ProjectList />
+      {/* <h2 className='project__title'>Projects.</h2>
 
       
       <div className='mt-3'>
@@ -98,7 +100,7 @@ export default function ProjectScreen() {
 
         ))}
  
-      </div>
+      </div> */}
 
     </div>
   )

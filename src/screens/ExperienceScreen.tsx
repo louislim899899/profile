@@ -119,28 +119,8 @@ export default function ExperienceScreen() {
 
   return (
     <div className='exp-wrapper'>
-      {/* {
-      Array.from(ExperienceMap, ([key, value]) => {
-        return (
-          <div key={value.get('year')} className="exp-wrapper__block">
-            <h3>{value.get('year')}</h3>
-            <h4>{value.get('company')}</h4>
-            <h5 className="font-color--main">{value.get('position')}</h5>
-            <p>{
-            Array.isArray(value.get('description')) ? 
-            value.get('description').map((value) => 
-              (<li key={value}>{value}</li>)
-            ) :
-              <li key={value}>{value.get('description')}</li>
-            }</p>
-          </div>
-        )
-      })
-      } */}
 
       <div className="wrapper">
-        {/* <div className="prev-btn"><span className="fa fa-angle-up"></span></div>
-        <div className="next-btn"><span className="fa fa-angle-down"></span></div> */}
         <div className="nav-dots">
           
         {
@@ -153,16 +133,6 @@ export default function ExperienceScreen() {
             </div>
           )
         })}
-          {/* <div className="nav-dot" data-slide="1">
-          </div>
-          <div className="nav-dot" data-slide="2">
-          </div>
-          <div className="nav-dot" data-slide="3">
-          </div>
-          <div className="nav-dot" data-slide="4">
-          </div>
-          <div className="nav-dot" data-slide="5">
-          </div> */}
         </div>
         
         {
@@ -191,49 +161,7 @@ export default function ExperienceScreen() {
         </div>
         )})}
       </div>
-{/* 
-        <div className="panel" data-slide="1">
-          <div className="trans-layer" id="layer-1"></div>
-          <section className="section" id="section-1">
-            <div className="section-content">
-              <h1>Vertical slider</h1>
-            </div>
-          </section>
-        </div>
-        <div className="panel" data-slide="2">
-          <div className="trans-layer" id="layer-2"></div>
-          <section className="section" id="section-2">
-            <div className="section-content">
-              <h1>Section 2</h1>
-            </div>
-          </section>
-        </div>
-        <div className="panel" data-slide="3">
-          <div className="trans-layer" id="layer-3"></div>
-          <section className="section" id="section-3">
-            <div className="section-content">
-              <h1>Section 3</h1>
-            </div>
-          </section>
-        </div>
-        <div className="panel" data-slide="4">
-          <div className="trans-layer" id="layer-4"></div>
-          <section className="section" id="section-4">
-            <div className="section-content">
-              <h1>Section 4</h1>
-            </div>
-          </section>
-        </div>
-        <div className="panel" data-slide="5">
-          <div className="trans-layer" id="layer-5"></div>
-          <section className="section" id="section-5">
-            <div className="section-content">
-              <h1>Section 5</h1>
-            </div>
-          </section>
-        </div>
-      </div>
-     */}
+
     </div>
   )
 }
