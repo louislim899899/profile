@@ -50,7 +50,7 @@ export default function Body() {
         } 
 
         const checkHomeScreen = () => {
-            currentUrl === "/" ? dispatch(screenActions.isHomeScreen()) : dispatch(screenActions.notHomeScreen());
+            currentUrl === "/profile" ? dispatch(screenActions.isHomeScreen()) : dispatch(screenActions.notHomeScreen());
         }
         
         checkHomeScreen(); 

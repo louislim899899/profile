@@ -17,8 +17,8 @@ export default function SplashScreen() {
             const paths = document.querySelectorAll(".splash__logo path");
             const mode=repeat?'infinite':'forwards'
             for (let i = 0; i < paths.length; i++) {
-                const path = paths[i];
-                /* istanbul ignore next */
+                const path = paths[i] as SVGGeometryElement;
+                // istanbul ignore next
                 const length = path.getTotalLength();
                 // const length = 1;
                 path.style["stroke-dashoffset"] = `${length}px`;
